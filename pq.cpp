@@ -3,8 +3,14 @@ int main() {
      *If you have an array of size n and you want to build a heap from all items at once, Floyd's algorithm can do it with O(n) complexity.
      *If you have an empty priority queue to which you want to add n items, one at a time, then the complexity is O(n * log(n)).     
      */
+    // In C++ if elements are known prior we can construct heap from all items at once(not possible in java)
+    vector<int> a={3,5,1,2,7,6};
+    // O(n)
+    priority_queue<int> Q(a.begin(),a.end());
+    
+    // O(nlogn)
     priority_queue<int> pq;
-    for(int i=2;i<=10;i+=2)
+    for(auto i:a)
         pq.push(i);
     // By default a max heap is created
     // pq: [10,8,6,4,2]
